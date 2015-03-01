@@ -29,10 +29,37 @@ static void window_unload(Window *window) {
   destroy_clock();
 }
 
+#ifdef PBL_COLOR
+static void update_color(struct tm *tick_time) {
+    GColor8 color;
+    int hour = tick_time->tm_min;
+    if (hour >= 6 && hour < 10) {
+        color = GColorCadetBlue;
+    }
+    else if (hour >= 10 && hour < 12) {
+        color = GColorChromeYellow;
+    } else if (hour >= 12 && hour < 14) {
+        color = GColorRoseVale;
+    } else if (hour>=14 && hour < 18) {
+        color = GColorWindsorTan;
+    } else if (hour>=18 && hour < 22) {
+        color = GColorLiberty;
+    } else {
+        color = GColorBulgarianRose;
+    }
+    window_set_background_color(window, color);
+}
+#else
+static void update_color(struct tm *tick_time) {
+}
+#endif
+
+
 /**
  * Minute tick event handler.
  */
 static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
+  update_color(tick_time);
   update_temps(tick_time);
   update_clock();
 }

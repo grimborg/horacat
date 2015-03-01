@@ -3,8 +3,8 @@
   "shortName": "L'hora catalana",
   "longName": "L'hora catalana",
   "companyName": "dev@oscarvilaplana.cat",
-  "versionCode": 1,
-  "versionLabel": "3.0",
+  "versionCode": 3.1,
+  "versionLabel": "3.1",
   "watchapp": {
     "watchface": true
   },
