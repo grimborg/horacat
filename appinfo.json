@@ -4,7 +4,7 @@
   "longName": "L'hora catalana",
   "companyName": "dev@oscarvilaplana.cat",
   "versionCode": 1,
-  "versionLabel": "1.0.1",
+  "versionLabel": "3.0",
   "watchapp": {
     "watchface": true
   },
@@ -30,5 +30,10 @@
         "menuIcon": true
       }
     ]
-  }
+  },
+  "targetPlatforms": [
+    "aplite",
+    "basalt"
+  ],
+  "sdkVersion": "3"
 }
